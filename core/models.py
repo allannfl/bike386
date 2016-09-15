@@ -23,3 +23,25 @@ class Bicicleta(models.Model):
 
 	def __str__(self):
 		return self.modelo
+
+class Cliente(models.Model):
+    nome = models.CharField(max_length = 100)
+    cpf = models.CharField(max_length = 11)
+    registro = models.CharField(max_length = 30)
+    endereco = models.CharField(max_length = 40)
+    telefone = models.CharField(max_length = 20)
+    debito = models.CharField(max_length = 30)
+    statos = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.nome
+
+class Empresa(models.Model):
+    nome = models.CharField(max_length = 100)
+    cnpj = models.CharField(max_length = 20)
+    codigo = models.CharField(max_length = 30)
+    endereco = models.CharField(max_length = 40)
+    telefone = models.CharField(max_length = 20)
+    
+    def __str__(self):
+        return self.nome
