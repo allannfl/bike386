@@ -4,10 +4,10 @@ from django.db import models
 class Funcionario(models.Model):
 	nome = models.CharField(max_length=40)
 	endereco = models.CharField(max_length=60)
-	telefone = models.CharField(max_length=15)
+	telefone = models.CharField(u'Celular', max_length=14, help_text='(99)99999-9999')
 	codigo = models.CharField(max_length=10)
 	funcao = models.CharField(max_length=40)
-
+	email = models.EmailField
 
 	def __str__(self):
 		return self.nome
@@ -22,4 +22,15 @@ class Bicicleta(models.Model):
 
 
 	def __str__(self):
-		return self.modelo
+		return self.marca
+
+
+class Empresa(models.Model):
+	razaosocial = models.CharField(max_length=40)
+	cnpj=models.CharField(max_length=15)
+
+	def __str__(self):
+		return self.razaosocial
+
+
+		
