@@ -9,7 +9,7 @@ class Funcionario(models.Model):
 	codigo = models.IntegerField()
 	funcao = models.CharField(max_length=40)
 	email = models.EmailField
-
+	
 
 
 	def __str__(self):

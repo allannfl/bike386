@@ -10,9 +10,12 @@ body {
 	margin:0px auto;
 	padding:0px 10px;
 }
-#header div a.join, #header ul li a:hover, #header ul li.current, #sidebar input.button {
+#header ul li a:hover, #header ul li.current, #sidebar input.button {
 	background:url(../images/buttons.gif) no-repeat;
 }
+#header div a.join {
+	background:url(../images/login.jpg)no-repeat;
+} 
 
 /*------------------------- Header -------------------------*/
 #header {
