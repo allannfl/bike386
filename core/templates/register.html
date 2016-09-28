@@ -1,32 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
-<html>
-<head>
-	<title>Bikers</title>
-	<meta  charset=iso-8859-1" />
-	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-</head>
+{% extends "base/base.html" %}
 
-<body>
-	<div id="page">
-		<div id="header"> <!-- start of header -->
-			<ul>
-				<li><a href="index">home</a></li>
-				<li><a href="about.htm">about</a></li>
-				<li><a href="events.htm">events</a></li>
-				<li><a href="gallery.htm">gallery</a></li>
-				<li><a href="blog.htm">blog</a></li>
-				<li><a href="contact-us.htm">contact</a></li>
-			</ul>
+{% block menuregister %}class="current"{% endblock%}
 
-			<div>
-				<a href="register.htm" class="join"></a>
-				<h3>PROIN AC EUISMOD MI</h3>
-				<p>Suspe disse vitae diam</p>
-			</div>
-		</div> <!-- end of header -->
-
+{% block content %}
+		
 		<div id="body">  
 			<div class="contents">
 				<h1>REGISTRATION</h1>
@@ -60,6 +37,5 @@
 			</ul>
 			<span> &copy; Copyright &copy; 2010.<a href="index.htm">Company name.</a> All Rights Reserved</span>
 		</div>
-	</div> <!-- end of footer part -->
-</body>
-</html>
+	</div>
+{% endblock content %}	

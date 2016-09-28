@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<title>Bikers</title>
-	<meta  charset=iso-8859-1" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<meta  charset=iso-8859-1 />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 	<div id="page">
 		<div id="header"> <!-- start of header -->
 			<ul>
-				<li><a href="index.htm">home</a></li>
-				<li><a href="about.htm">about</a></li>
-				<li><a href="events.htm">events</a></li>
-				<li><a href="gallery.htm">gallery</a></li>
-				<li><a href="blog.htm">blog</a></li>
-				<li class="current"><a href="contact-us.htm">contact</a></li>
+				<li {% block menuinicio %}{% endblock%}><a href="/">Inicio</a></li>
+				<li {% block menusobre %}{% endblock%}><a href="/sobre/">Sobre</a></li>
+				<li {% block menueventos %}{% endblock%}><a href="/eventos/">Eventos</a></li>
+				<li {% block menugaleria %}{% endblock%}><a href="/galeria/">Galeria</a></li>
+				<li {% block menuregistro %}{% endblock%}><a href="/register/">Registrar</a></li>
+				<li {% block menucontato %}{% endblock%}><a href="/contato/">Contato</a></li>
 			</ul>
 
 			<div>
@@ -28,6 +29,7 @@
 
 		<div id="body">  
 			<div class="contents">  <!-- start of content -->
+				{% block content %}
 				<h1>CONTACT DETAILS</h1>
 				<p>
 					This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text.
@@ -42,6 +44,7 @@
 				<p>Fax Number : (864) 232-4160</p>   
 				<br/>
 				<p>Email : info@companyname.com</p>
+				{% endblock content %}
 			</div> <!-- end of contents -->
 		</div>  <!-- end of body wrapper -->
 	</div>
