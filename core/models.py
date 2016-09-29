@@ -32,24 +32,19 @@ class Bicicleta(models.Model):
     def __str__(self):
         return self.modelo + ' - Código ' + str(self.id)
 
-class Empresa(models.Model):
-	razaosocial = models.CharField(max_length=40)
-	cnpj=models.CharField(max_length=15)
-
-	def __str__(self):
-		return self.razaosocial
 
 class Cliente(models.Model):
-	usuario = models.ForeignKey('auth.User') 
-	nome = models.CharField(max_length=40)
-	endereco = models.CharField(max_length=60)
-	telefone = models.CharField( max_length=14, help_text='(99)99999-9999')
-	codigo = models.IntegerField()
-	email = models.EmailField()
+    nome = models.CharField(max_length = 100)
+    cpf = models.CharField(max_length = 11)
+    registro = models.CharField(max_length = 30)
+    endereco = models.CharField(max_length = 40)
+    telefone = models.CharField(max_length = 20)
+    debito = models.CharField(max_length = 30)
+    statos = models.CharField(max_length = 30)
 
-	def __str__(self):
-		return self.nome
-		
+    def __str__(self):
+        return self.nome
+
 class Reserva(models.Model):
     bicicleta = models.ForeignKey(Bicicleta)
     cliente = models.ForeignKey(Cliente)
@@ -59,3 +54,13 @@ class Reserva(models.Model):
 
     def __str__(self):
         return self.cliente.nome
+
+class Empresa(models.Model):
+    nome = models.CharField(max_length = 100)
+    cnpj = models.CharField(max_length = 20)
+    codigo = models.CharField(max_length = 30)
+    endereco = models.CharField(max_length = 40)
+    telefone = models.CharField(max_length = 20)
+    
+    def __str__(self):
+        return self.nome
