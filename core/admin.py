@@ -22,7 +22,7 @@ class ClienteAdmin(admin.ModelAdmin):
 	list_display = ('nome', 'telefone', 'endereco')
 
 class ReservaAdmin(admin.ModelAdmin):
-    list_display = ('cliente', 'bicicleta', 'funcionario', 'data_criacao')
+    list_display = ('cliente', 'bicicleta', 'funcionario', 'data_criacao', 'data_retirada')
 
 
 

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 # Create your models here.
+
 class Funcionario(models.Model):
 	usuario = models.ForeignKey('auth.User') 
 	nome = models.CharField(max_length=40)
@@ -40,17 +41,18 @@ class Cliente(models.Model):
     endereco = models.CharField(max_length = 40)
     telefone = models.CharField(max_length = 20)
     debito = models.CharField(max_length = 30)
-    statos = models.CharField(max_length = 30)
+    status = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.nome
 
 class Reserva(models.Model):
-    bicicleta = models.ForeignKey(Bicicleta)
+    bicicleta = models.ForeignKey('Bicicleta')
     cliente = models.ForeignKey(Cliente)
     funcionario = models.ForeignKey(Funcionario)
     data_criacao = models.DateTimeField(auto_created=True)
-    data_retirada = models.DateTimeField(auto_now_add=True)
+    data_retirada = models.DateTimeField(auto_created=True)
+    data_devolucao = models.DateTimeField(default=None, null=True, blank=True)
 
     def __str__(self):
         return self.cliente.nome

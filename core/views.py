@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 def home(request):
 	return render(request,"index.html")
+	
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -27,6 +28,7 @@ def eventos(request):
 def sobre(request):
 	return render(request, 'sobre.html')
 
+@login_required
 def galeria(request):
 	return render(request, 'galeria.html')
 

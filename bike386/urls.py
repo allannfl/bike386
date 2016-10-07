@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
 from core.views import home, eventos, register,sobre,galeria,contato
 from django.contrib.auth.views import login, logout_then_login
 
@@ -24,6 +25,7 @@ from core import views
 urlpatterns = [
 	url(r'^$', views.home, name='home'),
 	url(r'^eventos/', eventos),
+	url(r'^login/', login, {'template_name' : 'login.html' }),
 	url(r'^contato/', contato),
     url(r'^register/', register),
     url(r'^sobre/', sobre),
