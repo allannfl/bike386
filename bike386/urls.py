@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^register/', register),
     url(r'^sobre/', sobre),
     url(r'^galeria/', galeria),
+    url(r'^logout/', logout_then_login),
     url(r'^admin/', admin.site.urls),
 
 ]

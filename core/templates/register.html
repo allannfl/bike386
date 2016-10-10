@@ -14,14 +14,40 @@
 						If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forum/">Forum</a>.
 					</p>
 					<form action="" method="post">
+						{% csrf_token %}
+						 {{ form.non_field_errors }}
 						<table cellspacing="0" cellpadding="0">
 							<tbody>
-								<tr><td><label>First Name*</label></td><td><input type="text" name="text" class="txtfield" /></td></tr>
-								<tr><td><label>Email*</label></td><td><input type="text" value="" class="txtfield" /></td></tr>
-								<tr><td><label>Password*</label></td><td><input type="password" name="password1" class="txtfield" /></td></tr>
-								<tr><td><label>Confirm Password*</label></td><td><input type="password" name="password2" class="txtfield" /></td></tr>
-								<tr><td colspan="2"><input type="submit" value="Submit" class="button" /></td></tr>
-								<tr><td colspan="2">* = Required Field</td></tr>
+								 
+					            <tr>
+					                <td>
+					                    Usuário
+					                </td>
+					                <td>
+					                    <input name="username" type="text"/>
+					                    {{ form.username.errors }}
+					                </td>
+					            </tr>
+					            <tr>
+					                <td>Senha:</td>
+					                <td>
+					                    <input name="password1" type="password"/>
+					                    {{ form.password1.errors }}
+					                </td>
+					            </tr>
+					            <tr>
+					                <td>Confirme a Senha:</td>
+					                <td>
+					                    <input name="password2" type="password"/>
+					                    {{ form.password2.errors }}
+					                </td>
+					            </tr>
+					            <tr>
+					                <td colspan="2">
+					                    <button type="submit">Cadastrar</button>
+					                </td>
+					            </tr>
+        
 							</tbody>
 						</table>
 					</form>
